@@ -35,14 +35,14 @@ url = urllib.urlopen(li)
 print 'Wait, your video is being downloaded'
 blocksize = 8192
 size = url.info().getheaders('Content-Length')[0]
-size = float(size)
+size = float(size) 
 data_read = 0
 while True:
     buff = url.read(blocksize)
     data_read = data_read + blocksize
     if not buff:
         break
-    f.write(buff)
+    f.write(buff) 
     sys.stdout.write("\rDownloaded %s %%" % math.floor(data_read/size*100))
 sys.stdout.flush()
 print "\n"
